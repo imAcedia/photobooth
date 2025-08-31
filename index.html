@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./micromodal.css" />
+  <link rel="stylesheet" href="./picnic.min.css" />
+  <title>Photobooth</title>
+</head>
+
+<body>
+  <img id="main-background" src="img/BG16-9@2x.png" />
+  <div id="start-page">
+    <div class="flex one center">
+      <button id="button-start">
+        <img src="img/camera-button.svg" />
+      </button>
+    </div>
+  </div>
+
+  <div class="modal micromodal-slide" id="modal-pay" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-pay-content">
+        <div class="modal__content" id="modal-pay-content">
+          <div id="snap-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal">
+    <input id="modal-error" type="checkbox" />
+    <label for="modal-error" class="overlay"></label>
+    <article>
+      <header>
+        <h3>Error</h3>
+        <label for="modal-error" class="close">&times;</label>
+      </header>
+      <section class="content" id="modal-error-message">
+      </section>
+      <footer class="center">
+        <label for="modal-error" class="button dangerous">
+          Cancel
+        </label>
+      </footer>
+    </article>
+  </div>
+</body>
+
+<script src="src/snap.js"></script>
+<script src="src/snap.sandbox.js"></script>
+<script src="src/micromodal.min.js"></script>
+<script src="src/renderer.js"></script>
+
+</html>
